@@ -8,10 +8,9 @@ app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
 // specify start of page
-app.get('/', (req, res) => {
+app.post('/register', (req, res) => {
   res.send({
-    name: 'ruchika',
-    likes: ['h', 'd']
+    message: ` ${req.body.email} user registered`
   })
 })
 app.listen(process.env.PORT || 8081)
